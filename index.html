@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; media-src 'self' blob:;">
+    <title>MirrorAccent - Perfect Your Accent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <span class="logo-icon">🎙️</span>
+                <span class="logo-text">MirrorAccent</span>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-ghost" id="settings-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Screen 1: Welcome / Accent Selection -->
+            <section class="screen active" id="screen-welcome">
+                <div class="screen-inner">
+                    <div class="welcome-hero">
+                        <h1>Master Any Accent</h1>
+                        <p class="subtitle">Record yourself, hear your voice transformed to any accent, and practice
+                            until you match it perfectly</p>
+                    </div>
+
+                    <div class="accent-selection">
+                        <h2>Choose Your Target Accent</h2>
+                        <div class="accent-grid" id="accent-grid">
+                            <button class="accent-card" data-accent="british-rp" data-voice-id="pNInz6obpgDQGcFmaJgB">
+                                <span class="accent-flag">🇬🇧</span>
+                                <span class="accent-name">British (RP)</span>
+                                <span class="accent-desc">Received Pronunciation</span>
+                            </button>
+                            <button class="accent-card" data-accent="american-general"
+                                data-voice-id="21m00Tcm4TlvDq8ikWAM">
+                                <span class="accent-flag">🇺🇸</span>
+                                <span class="accent-name">American</span>
+                                <span class="accent-desc">General American</span>
+                            </button>
+                            <button class="accent-card" data-accent="australian" data-voice-id="AZnzlk1XvdvUeBnXmlld">
+                                <span class="accent-flag">🇦🇺</span>
+                                <span class="accent-name">Australian</span>
+                                <span class="accent-desc">Standard Australian</span>
+                            </button>
+                            <button class="accent-card" data-accent="irish" data-voice-id="IKne3meq5aSn9XLyUdCD">
+                                <span class="accent-flag">🇮🇪</span>
+                                <span class="accent-name">Irish</span>
+                                <span class="accent-desc">Dublin English</span>
+                            </button>
+                            <button class="accent-card" data-accent="indian" data-voice-id="SOYHLrjzK2X1ezoPC6cr">
+                                <span class="accent-flag">🇮🇳</span>
+                                <span class="accent-name">Indian</span>
+                                <span class="accent-desc">Indian English</span>
+                            </button>
+                            <button class="accent-card" data-accent="south-african"
+                                data-voice-id="TX3LPaxmHKxFdv7VOQHJ">
+                                <span class="accent-flag">🇿🇦</span>
+                                <span class="accent-name">South African</span>
+                                <span class="accent-desc">South African English</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Screen 2: Voice Recording -->
+            <section class="screen" id="screen-recording">
+                <div class="screen-inner">
+                    <div class="recording-header">
+                        <button class="btn btn-ghost back-btn" id="back-to-welcome">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M19 12H5M12 19l-7-7 7-7" />
+                            </svg>
+                            Back
+                        </button>
+                        <div class="progress-indicator">
+                            <span class="progress-text">Recording <span id="current-paragraph">1</span> of <span
+                                    id="total-paragraphs">5</span></span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="recording-progress"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recording-content">
+                        <div class="prompt-card">
+                            <h3>Read this passage aloud:</h3>
+                            <p class="prompt-text" id="prompt-text">
+                                The rainbow arched gracefully across the morning sky, its vibrant colors painting a
+                                bridge between the misty hills and the awakening village below. Children pointed
+                                excitedly while their parents smiled, remembering their own wonder at such natural
+                                beauty.
+                            </p>
+                        </div>
+
+                        <div class="recording-controls">
+                            <div class="waveform-container" id="waveform-container">
+                                <canvas id="waveform-canvas"></canvas>
+                            </div>
+
+                            <div class="recording-buttons">
+                                <button class="btn btn-record" id="record-btn">
+                                    <span class="record-icon"></span>
+                                    <span class="record-label">Start Recording</span>
+                                </button>
+                                <button class="btn btn-secondary" id="play-recording-btn" disabled>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                    </svg>
+                                    Play Back
+                                </button>
+                            </div>
+
+                            <div class="recording-actions">
+                                <button class="btn btn-ghost" id="re-record-btn" disabled>Re-record</button>
+                                <button class="btn btn-primary" id="next-paragraph-btn" disabled>Next Paragraph</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Screen 3: Processing -->
+            <section class="screen" id="screen-processing">
+                <div class="screen-inner centered">
+                    <div class="processing-animation">
+                        <div class="processing-rings">
+                            <div class="ring ring-1"></div>
+                            <div class="ring ring-2"></div>
+                            <div class="ring ring-3"></div>
+                        </div>
+                        <div class="processing-icon">🎙️</div>
+                    </div>
+                    <h2>Creating Your Voice Clone</h2>
+                    <p class="processing-status" id="processing-status">Analyzing voice characteristics...</p>
+                    <div class="processing-steps">
+                        <div class="step" id="step-upload">
+                            <span class="step-icon">⏳</span>
+                            <span class="step-text">Uploading recordings</span>
+                        </div>
+                        <div class="step" id="step-clone">
+                            <span class="step-icon">⏳</span>
+                            <span class="step-text">Creating voice clone</span>
+                        </div>
+                        <div class="step" id="step-accent">
+                            <span class="step-icon">⏳</span>
+                            <span class="step-text">Generating accent voice</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Screen 4: Practice Mode -->
+            <section class="screen" id="screen-practice">
+                <div class="screen-inner">
+                    <div class="practice-header">
+                        <div class="practice-info">
+                            <h2>Practice Mode</h2>
+                            <p class="accent-label">Training: <span id="selected-accent-name">British (RP)</span></p>
+                        </div>
+                        <div class="practice-stats">
+                            <div class="stat">
+                                <span class="stat-value" id="accuracy-score">--</span>
+                                <span class="stat-label">Accuracy</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value" id="session-count">0</span>
+                                <span class="stat-label">Attempts</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-content">
+                        <div class="practice-card">
+                            <div class="practice-mode-tabs">
+                                <button class="tab active" data-mode="listen-repeat">Listen & Repeat</button>
+                                <button class="tab" data-mode="shadowing">Shadowing</button>
+                                <button class="tab" data-mode="pitch-match">Pitch Matching</button>
+                            </div>
+
+                            <div class="prompt-display">
+                                <p class="prompt-label">Say this phrase:</p>
+                                <p class="prompt-text" id="practice-prompt">Click "New Prompt" to get started</p>
+                            </div>
+
+                            <div class="practice-area">
+                                <div class="user-audio-section">
+                                    <h4>1. Record Yourself</h4>
+                                    <div class="audio-player recording-mode" id="user-audio-player">
+                                        <button class="record-btn-small" id="practice-record-btn">
+                                            <span class="record-dot"></span>
+                                        </button>
+                                        <div class="audio-waveform" id="user-waveform"></div>
+                                        <span class="audio-duration" id="user-duration">0:00</span>
+                                    </div>
+                                </div>
+
+                                <div class="divider-with-text">
+                                    <span>⬇️ Transform</span>
+                                </div>
+
+                                <div class="target-audio-section">
+                                    <h4>2. Your Voice with Accent</h4>
+                                    <div class="audio-player" id="target-audio-player">
+                                        <button class="play-btn" id="play-target-btn">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                            </svg>
+                                        </button>
+                                        <div class="audio-waveform" id="target-waveform"></div>
+                                        <span class="audio-duration" id="target-duration">0:00</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="practice-actions">
+                                <button class="btn btn-secondary" id="new-prompt-btn">New Prompt</button>
+                                <button class="btn btn-primary" id="analyze-btn" disabled>Transform & Analyze</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Screen 5: Results / Prosody Analysis -->
+            <section class="screen" id="screen-results">
+                <div class="screen-inner">
+                    <div class="results-header">
+                        <button class="btn btn-ghost back-btn" id="back-to-practice">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M19 12H5M12 19l-7-7 7-7" />
+                            </svg>
+                            Back to Practice
+                        </button>
+                        <h2>Prosody Analysis</h2>
+                    </div>
+
+                    <div class="results-content">
+                        <div class="overall-score-card">
+                            <div class="score-circle">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <path class="circle-bg"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle" id="score-path" stroke-dasharray="0, 100"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                </svg>
+                                <span class="score-value" id="overall-score">--</span>
+                            </div>
+                            <div class="score-label">Overall Match</div>
+                        </div>
+
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <span class="metric-name">F0 (Pitch)</span>
+                                    <span class="metric-value" id="f0-score">--</span>
+                                </div>
+                                <div class="metric-chart" id="f0-chart"></div>
+                                <p class="metric-desc">Fundamental frequency contour matching</p>
+                            </div>
+
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <span class="metric-name">Formants (F1/F2)</span>
+                                    <span class="metric-value" id="formants-score">--</span>
+                                </div>
+                                <div class="metric-chart" id="formants-chart"></div>
+                                <p class="metric-desc">Vowel quality and resonance</p>
+                            </div>
+
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <span class="metric-name">Intensity</span>
+                                    <span class="metric-value" id="intensity-score">--</span>
+                                </div>
+                                <div class="metric-chart" id="intensity-chart"></div>
+                                <p class="metric-desc">Loudness envelope similarity</p>
+                            </div>
+
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <span class="metric-name">Speaking Rate</span>
+                                    <span class="metric-value" id="rate-score">--</span>
+                                </div>
+                                <div class="metric-chart" id="rate-chart"></div>
+                                <p class="metric-desc">Tempo and rhythm alignment</p>
+                            </div>
+
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <span class="metric-name">Pitch Range</span>
+                                    <span class="metric-value" id="range-score">--</span>
+                                </div>
+                                <div class="metric-chart" id="range-chart"></div>
+                                <p class="metric-desc">Intonation variability</p>
+                            </div>
+
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <span class="metric-name">Duration</span>
+                                    <span class="metric-value" id="duration-score">--</span>
+                                </div>
+                                <div class="metric-chart" id="duration-chart"></div>
+                                <p class="metric-desc">Segment timing precision</p>
+                            </div>
+                        </div>
+
+                        <div class="feedback-section">
+                            <h3>Suggestions for Improvement</h3>
+                            <ul class="feedback-list" id="feedback-list">
+                                <li>Loading analysis...</li>
+                            </ul>
+                        </div>
+
+                        <div class="results-actions">
+                            <button class="btn btn-secondary" id="try-again-btn">Try Again</button>
+                            <button class="btn btn-primary" id="continue-practice-btn">Continue Practice</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Settings Modal -->
+        <div class="modal" id="settings-modal">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Settings</h3>
+                    <button class="btn btn-ghost close-modal">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M18 6L6 18M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="api-key-input">ElevenLabs API Key</label>
+                        <div class="input-with-action">
+                            <input type="password" id="api-key-input" placeholder="Enter your API key">
+                            <button class="btn btn-ghost toggle-visibility">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                        <p class="form-hint">Get your API key from <a href="https://elevenlabs.io"
+                                target="_blank">elevenlabs.io</a></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="audio-device-select">Microphone</label>
+                        <select id="audio-device-select" class="form-select">
+                            <option value="">Loading devices...</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" id="save-api-key-btn">Save Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/recorder.js"></script>
+    <script src="js/prosody.js"></script>
+    <script src="js/elevenlabs.js"></script>
+    <script src="js/practice.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

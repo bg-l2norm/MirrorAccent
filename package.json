@@ -1,0 +1,27 @@
+{
+    "name": "mirror-accent",
+    "version": "1.0.0",
+    "description": "Voice-cloning based accent training for non-native speakers",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "build": "electron-builder"
+    },
+    "keywords": [
+        "accent",
+        "voice-cloning",
+        "elevenlabs",
+        "prosody",
+        "language-learning"
+    ],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "^28.0.0",
+        "electron-builder": "^24.9.1"
+    },
+    "dependencies": {
+        "form-data": "^4.0.5",
+        "pitchfinder": "^2.3.0"
+    }
+}
