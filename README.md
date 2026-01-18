@@ -1,6 +1,7 @@
-## Description
+## MirrorAccent
 
-MirrorAccent is an AI-powered voice coaching app built for the TURING CITY (NexHacks, 2026) Hackathon. It helps you practice any accent by letting you hear *your own voice* transformed into a target accent, and then giving you technical feedback on how to match it.
+This is an AI-powered voice coaching app.
+It helps you practice any accent by letting you hear *your own voice* transformed into a target accent, and then giving you technical feedback on how to match it.
 
 ## Screenshots
 
